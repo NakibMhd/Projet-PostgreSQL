@@ -8,4 +8,4 @@
 
 `exit` 
 
-`psql -U appi_web -h localhost appli_web`
+`psql -U appli_web -h localhost appli_web`
