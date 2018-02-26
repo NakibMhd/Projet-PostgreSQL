@@ -1,7 +1,7 @@
 Installer PostGreSQL :
 
 
-`apt-get install postgressql postgressql-client`
+`apt-get install postgresql postgresql-client`
 
 `sudo -s -u postgres`
 
