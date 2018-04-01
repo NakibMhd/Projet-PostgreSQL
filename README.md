@@ -42,14 +42,14 @@ Configuration d'Apache pour phpMyAdmin :
 
 `sudo nano /etc/apache2/conf-available/phpmyadmin.conf`
 
-```<Directory "/usr/share/phpmyadmin">
+<Directory "/usr/share/phpmyadmin">
     Order Deny,Allow
     Deny from all
     Allow from all
  </Directory>
 
   Alias /phpmyadmin /usr/share/phpmyadmin
-  Alias /phpMyAdmin /usr/share/phpmyadmin```
+  Alias /phpMyAdmin /usr/share/phpmyadmin
 
 `sudo ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin`
 
