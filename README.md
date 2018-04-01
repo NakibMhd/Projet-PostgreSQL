@@ -1,22 +1,56 @@
 Projet 2 : 
 
-Installer PostGreSQL :
+Installer et configurer un serveur MySQL :
+
+`apt install apache2 mysql-server php7.0`
 
 
-`apt-get install postgresql postgresql-client`
+Création de l'utilisateur :
 
-`sudo -s -u postgres`
+`mysql -u root -p`
 
-`createuser -d -P appli_web`
+`CREATE USER 'appli_web'@'localhost' IDENTIFIED BY 'appli_web';`
 
-`createdb -O appli_web appli_web`
+`exit`
+
+
+Création de la base de données
+
+`mysql -u appli_web -p`
+
+`CREATE DATABASE appli_web;`
 
 `exit` 
 
-`psql -U appli_web -h localhost appli_web`
+
+Mise en place de l'outil phpMyAdmin :
+
+`cd /usr/share`
+
+`sudo wget https://files.phpmyadmin.net/phpMyAdmin/4.7.9/phpMyAdmin-4.7.9-all-languages.zip`
+
+`sudo unzip phpMyAdmin-4.7.9-all-languages.zip`
+
+`sudo mv phpMyAdmin-4.7.6-all-languages phpmyadmin`
+
+`sudo chown -R www-data:www-data /usr/share/phpmyadmin`
+
+`sudo chmod -R 755 /usr/share/phpmyadmin`
 
 
-Installer Pgadmin4 : 
+Configuration d'Apache pour phpMyAdmin : 
 
-[Installation](https://gist.github.com/Prototype-X/fd8bf6d8b929224621613316bf37db02)
- 
+`sudo nano /etc/apache2/conf-available/phpmyadmin.conf`
+
+>>> `<Directory "/usr/share/phpmyadmin">
+>>>    Order Deny,Allow
+>>>    Deny from all
+>>>    Allow from all
+>>>  </Directory>
+>>>
+>>>  Alias /phpmyadmin /usr/share/phpmyadmin
+>>>  Alias /phpMyAdmin /usr/share/phpmyadmin`
+
+`sudo ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin`
+
+'sudo service apache2 reload'
