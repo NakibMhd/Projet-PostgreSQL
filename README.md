@@ -1,11 +1,11 @@
-Projet 2 : 
+#Projet 2 : 
 
-Installer et configurer un serveur MySQL :
+##Installer et configurer un serveur MySQL :
 
 `apt install apache2 mysql-server php7.0`
 
 
-Création de l'utilisateur :
+##Création de l'utilisateur :
 
 `mysql -u root -p`
 
@@ -14,7 +14,7 @@ Création de l'utilisateur :
 `exit`
 
 
-Création de la base de données
+##Création de la base de données
 
 `mysql -u appli_web -p`
 
@@ -23,7 +23,7 @@ Création de la base de données
 `exit` 
 
 
-Mise en place de l'outil phpMyAdmin :
+##Mise en place de l'outil phpMyAdmin :
 
 `cd /usr/share`
 
@@ -38,11 +38,11 @@ Mise en place de l'outil phpMyAdmin :
 `sudo chmod -R 755 /usr/share/phpmyadmin`
 
 
-Configuration d'Apache pour phpMyAdmin : 
+##Configuration d'Apache pour phpMyAdmin : 
 
 `sudo nano /etc/apache2/conf-available/phpmyadmin.conf`
 
-<Directory "/usr/share/phpmyadmin">
+ <Directory "/usr/share/phpmyadmin">
     Order Deny,Allow
     Deny from all
     Allow from all
