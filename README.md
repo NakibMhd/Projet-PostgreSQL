@@ -31,7 +31,7 @@
 
 `sudo unzip phpMyAdmin-4.7.9-all-languages.zip`
 
-`sudo mv phpMyAdmin-4.7.6-all-languages phpmyadmin`
+`sudo mv phpMyAdmin-4.7.9-all-languages phpmyadmin`
 
 `sudo chown -R www-data:www-data /usr/share/phpmyadmin`
 
