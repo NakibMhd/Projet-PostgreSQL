@@ -52,8 +52,6 @@
 
 > </Directory>
 
->
-
 >  Alias /phpmyadmin /usr/share/phpmyadmin
 
 >  Alias /phpMyAdmin /usr/share/phpmyadmin
