@@ -65,7 +65,7 @@
 
 `sudo service apache2 reload`
 
-[http://localhost/phpmyadmin]
+http://localhost/phpmyadmin
 
 Login : appli_web
 Password : appli_web
