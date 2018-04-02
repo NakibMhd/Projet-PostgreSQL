@@ -5,16 +5,18 @@
 `apt install apache2 mysql-server php7.0`
 
 
-## Création de l'utilisateur :
+### Création de l'utilisateur :
 
 `mysql -u root -p`
 
 `CREATE USER 'appli_web'@'localhost' IDENTIFIED BY 'appli_web';`
 
+`GRANT ALL PRIVILEGES ON * . * TO 'appli_web'@'localhost';`
+
 `exit`
 
 
-## Création de la base de données
+### Création de la base de données
 
 `mysql -u appli_web -p`
 
@@ -23,7 +25,7 @@
 `exit` 
 
 
-## Mise en place de l'outil phpMyAdmin :
+### Mise en place de l'outil phpMyAdmin :
 
 `cd /usr/share`
 
@@ -38,7 +40,7 @@
 `sudo chmod -R 755 /usr/share/phpmyadmin`
 
 
-## Configuration d'Apache pour phpMyAdmin : 
+### Configuration d'Apache pour phpMyAdmin : 
 
 `sudo nano /etc/apache2/conf-available/phpmyadmin.conf`
 
@@ -56,6 +58,15 @@
 >
 >  Alias /phpMyAdmin /usr/share/phpmyadmin
 
-`sudo ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin`
+`sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin`
+
+
+`sudo nano /etc/php/7.0/cli/php.ini` pour d-écommenter la ligne 'extension=php_mysqli.dll'
 
 `sudo service apache2 reload`
+
+http://localhost/phpmyadmin/
+Login : appli_web
+Password : appli_web
+
+(Si l'extension MySQLi est toujours manquante, faire `sudo apt-get install php-mysql`) et `sudo service apache2 reload` et réessayer).
