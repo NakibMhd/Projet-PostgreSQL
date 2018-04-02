@@ -61,11 +61,12 @@
 `sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin`
 
 
-`sudo nano /etc/php/7.0/cli/php.ini` pour d-écommenter la ligne 'extension=php_mysqli.dll'
+`sudo nano /etc/php/7.0/cli/php.ini` pour décommenter la ligne `extension=php_mysqli.dll`
 
 `sudo service apache2 reload`
 
-http://localhost/phpmyadmin/
+[http://localhost/phpmyadmin]
+
 Login : appli_web
 Password : appli_web
 
