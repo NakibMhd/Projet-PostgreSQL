@@ -51,5 +51,5 @@ else:
    dumpcmd = "mysqldump -u " + DB_USER + " -p" + DB_USER_PASSWORD + " " + db + " > " + TODAYBACKUPPATH + "/" + db + ".sql"
    os.system(dumpcmd)
 
-print("Script de sauvegard exécuté.")
+print("Script de sauvegarde exécuté.")
 print("Votre sauvegarde a été créé dans le dossier '" + TODAYBACKUPPATH)
